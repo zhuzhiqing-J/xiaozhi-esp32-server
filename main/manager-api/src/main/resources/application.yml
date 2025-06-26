@@ -5,9 +5,9 @@ server:
     threads:
       max: 1000
       min-spare: 30
-  port: 8002
+  port: 8008
   servlet:
-    context-path: /xiaozhi
+    context-path: /ylj
     session:
       cookie:
         http-only: true

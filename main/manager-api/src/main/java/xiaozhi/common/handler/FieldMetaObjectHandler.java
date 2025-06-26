@@ -1,5 +1,6 @@
 package xiaozhi.common.handler;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import org.apache.ibatis.reflection.MetaObject;
@@ -42,6 +43,9 @@ public class FieldMetaObjectHandler implements MetaObjectHandler {
 
         // 数据标识
         strictInsertFill(metaObject, DATA_OPERATION, String.class, Constant.DataOperation.INSERT.getValue());
+
+        setFieldValByName("create_time", new Date().getTime(),metaObject);
+        setFieldValByName("update_time",new Date().getTime(),metaObject);
     }
 
     @Override
@@ -53,5 +57,7 @@ public class FieldMetaObjectHandler implements MetaObjectHandler {
 
         // 数据标识
         strictInsertFill(metaObject, DATA_OPERATION, String.class, Constant.DataOperation.UPDATE.getValue());
+
+        setFieldValByName("update_time",new Date().getTime(),metaObject);
     }
 }

@@ -85,12 +85,15 @@ public class ShiroConfig {
         filterMap.put("/user/pub-config", "anon");
         filterMap.put("/user/register", "anon");
         filterMap.put("/user/retrieve-password", "anon");
+        filterMap.put("/notify/getNotify","anon");
         // 将config路径使用server服务过滤器
         filterMap.put("/config/**", "server");
         filterMap.put("/agent/chat-history/report", "server");
         filterMap.put("/agent/saveMemory/**", "server");
         filterMap.put("/agent/play/**", "anon");
+
         filterMap.put("/**", "oauth2");
+
         shiroFilter.setFilterChainDefinitionMap(filterMap);
 
         return shiroFilter;
